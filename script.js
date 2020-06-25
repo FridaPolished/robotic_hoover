@@ -73,17 +73,19 @@ function run(){
     dirt.add(key)
   })
   let counter = 0; 
-  // let queue = directions.slice();
 
   while(directions.length){
     let dir = directions.shift();
+
+
     switch(dir){
       case 'N':
         if(withinBounds(hooverPos[0] -1, hooverPos[1])){
           console.log('robot going north')
-          grid[hooverPos[0]][hooverPos[1]] = '.'
-          hooverPos[0] = hooverPos[0] - 1;
-          grid[hooverPos[0]][hooverPos[1]] = 'H'
+          updateRobotPos(hooverPos[0], hooverPos[1], hooverPos[0] - 1, hooverPos[1] )
+          // grid[hooverPos[0]][hooverPos[1]] = '.'
+          // hooverPos[0] = hooverPos[0] - 1;
+          // grid[hooverPos[0]][hooverPos[1]] = 'H'
           console.log(grid)
 
           let curPos = +hooverPos[0] + ',' + hooverPos[1] 
@@ -97,9 +99,10 @@ function run(){
       case 'S':
         if(withinBounds(hooverPos[0] + 1, hooverPos[1])){
           console.log('robot going south')
-          grid[hooverPos[0]][hooverPos[1]] = '.'
-          hooverPos[0] = hooverPos[0] + 1;
-          grid[hooverPos[0]][hooverPos[1]] = 'H'
+          updateRobotPos(hooverPos[0], hooverPos[1], hooverPos[0] + 1, hooverPos[1])
+          // grid[hooverPos[0]][hooverPos[1]] = '.'
+          // hooverPos[0] = hooverPos[0] + 1;
+          // grid[hooverPos[0]][hooverPos[1]] = 'H'
           console.log(grid)
 
           let curPos = +hooverPos[0] + ',' + hooverPos[1]
@@ -113,13 +116,14 @@ function run(){
       case 'E':
         if(withinBounds(hooverPos[0], hooverPos[1] + 1)){
           console.log('Robot going east')
-          grid[hooverPos[0]][hooverPos[1]] = '.'
-          hooverPos[1] = hooverPos[1] + 1;
-          grid[hooverPos[0]][hooverPos[1]] = 'H'
+          updateRobotPos(hooverPos[0], hooverPos[1], hooverPos[0], hooverPos[1] + 1)
+          // grid[hooverPos[0]][hooverPos[1]] = '.'
+          // hooverPos[1] = hooverPos[1] + 1;
+          // grid[hooverPos[0]][hooverPos[1]] = 'H'
           console.log(grid)
 
           let curPos = +hooverPos[0] + ',' + hooverPos[1]
-          console.log(curPos, dirt)
+          
           if (dirt.has(curPos)) {
             console.log('found dirt!')
             dirt.delete(curPos)
@@ -130,9 +134,10 @@ function run(){
       case 'W':
         if(withinBounds(hooverPos[0], hooverPos[1] - 1)){
           console.log('robot going west')
-          grid[hooverPos[0]][hooverPos[1]] = '.'
-          hooverPos[1] = hooverPos[1] - 1;
-          grid[hooverPos[0]][hooverPos[1]] = 'H'
+          updateRobotPos(hooverPos[0], hooverPos[1], hooverPos[0], hooverPos[1] - 1)
+          // grid[hooverPos[0]][hooverPos[1]] = '.'
+          // hooverPos[1] = hooverPos[1] - 1;
+          // grid[hooverPos[0]][hooverPos[1]] = 'H'
           console.log(grid)
 
           let curPos = +hooverPos[0] + ',' + hooverPos[1]
@@ -148,9 +153,9 @@ function run(){
     }
   }
   // console.log(directions)
-  let resultPosition = [hooverPos[1], (totalRows - 1) - hooverPos[0] ]
-  console.log(resultPosition)
-  console.log(counter)
+  let resultPosition = [hooverPos[1],  (totalRows - 1) - hooverPos[0]] 
+  console.log("Final position of the Robot: ", resultPosition)
+  console.log("Dirt collected", counter)
   return;
 }
 
@@ -161,6 +166,12 @@ function withinBounds(row, col){
   return true;
 }
 
+function updateRobotPos(StartRow, startCol, endRow, endCol){
+  grid[StartRow][startCol] = '.'
+  hooverPos[0] = endRow;
+  hooverPos[1] = endCol;
+  grid[hooverPos[0]][hooverPos[1]] = 'H';
+}
 
 
 placeElements()
