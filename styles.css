@@ -18,6 +18,11 @@ body {
   background: black;
 }
 
+#robot-img{
+  max-height: 120px;
+  max-width: 120px;
+}
+
 #robot-pos {
   background: #00bfa5;
   font-size: 1.6em;
