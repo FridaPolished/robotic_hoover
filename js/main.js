@@ -7,7 +7,7 @@ var input = document.getElementById('original-input');
 $(document).ready(function () {
   
   //reading data from txt
-  $.get("./blob/master/input.txt", function (data) {
+  $.get("../input.txt", function (data) {
     data = data.split("\n");
     Data.setData(data);
     Data.placeElements();
@@ -20,7 +20,7 @@ $(document).ready(function () {
       Data.directions,
       Data.grid);
     output.innerHTML = Data.showData({ 'input': false, 'output': true, 'res': res });
-    }, "text");  
+    });  
   });
 
 
