@@ -5,7 +5,6 @@ body {
   margin-bottom: 20px;
   width: 100%;
   padding: 16px;
-  font-size: 1.6em;
   border-radius: 4px;
   border: 0;
 }
@@ -13,6 +12,13 @@ body {
 #counter{
   background: black;
   color: white;
+  font-size: 1.6em;
+}
+
+.canvas{
+  height: 450;
+  width: 560;
+  background-color: gray;
 }
 
 form span{
@@ -21,11 +27,6 @@ form span{
 
 .nav{
   background: black;
-}
-
-#robot-img{
-  max-height: 120px;
-  max-width: 120px;
 }
 
 #robot-pos {
