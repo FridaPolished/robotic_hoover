@@ -1,0 +1,34 @@
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+
+#counter{
+  background: black;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  color: white;
+  border: 0;
+}
+
+/* form span{
+  color: #00bfa5;
+} */
+
+.nav{
+  background: black;
+}
+
+#robot-pos {
+  background: #00bfa5;
+  font-size: 1.6em;
+}
+
+.x-axis path, .y-axis path,
+.x-axis line, .y-axis line {
+  stroke: white;
+}
+
+.x-axis text, .y-axis text{
+  fill: white;
+  font-size: 14px;
+}

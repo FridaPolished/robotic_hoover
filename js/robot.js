@@ -91,8 +91,9 @@ function run(rows, cols, hoover, dirtPos, directions, g) {
    
   let resultPosition = `${hooverPos[1]}, ${totalRows - 1 - hooverPos[0]}`;
   console.log("Final position of the Robot: ", resultPosition);
-  console.log("Dirt collected", counter);
-  return;
+  console.log("Dirt collected: ", counter);
+  
+  return { hoover: resultPosition, count: counter };
 }
 
 //checking for valid position
