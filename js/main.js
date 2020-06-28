@@ -3,12 +3,14 @@ import * as Robot from './robot.js';
 
 var counter = document.getElementById('counter');
 var robot = document.getElementById('robot-pos');
+// var originalInput = document.getElementById('original-input');
 
 $(document).ready(function () {
   
   //reading data from txt
   $.get("../input.txt", function (d) {
     var data = d;
+    // originalInput.innerHTML = `${d}`
     data = data.split("\n");
     Data.setData(data);
     Data.placeElements();
