@@ -7,7 +7,7 @@ var input = document.getElementById('original-input');
 $(document).ready(function () {
   
   //reading data from txt
-  $.get("../input.txt", function (data) {
+  $.get("robotic_hoover/input.txt", function (data) {
     data = data.split("\n");
     Data.setData(data);
     Data.placeElements();
