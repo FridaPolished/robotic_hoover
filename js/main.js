@@ -3,15 +3,16 @@ import * as Robot from './robot.js';
 
 var counter = document.getElementById('counter');
 var robot = document.getElementById('robot-pos');
-// var originalInput = document.getElementById('original-input');
-
+var originalInput = document.getElementById('original-input');
+var savedD;
 $(document).ready(function () {
   
   //reading data from txt
   $.get("../input.txt", function (d) {
     var data = d;
-    // originalInput.innerHTML = `${d}`
     data = data.split("\n");
+    originalInput.innerHTML = `Original input: ${data}`
+    savedD = data;
     Data.setData(data);
     Data.placeElements();
     let res = Robot.run(
@@ -21,9 +22,8 @@ $(document).ready(function () {
       Data.dirtPos, 
       Data.directions,
       Data.grid);
-    robot.innerHTML = `Final position of the Robot:  ${res["hoover"]}`;
-    counter.innerHTML = `Dirt collected:${res["count"]}`;
+      robot.innerHTML = `Final position of the Robot:  ${res["hoover"]}`;
+      counter.innerHTML = `Dirt collected:${res["count"]}`;
+    });
+    
   });
-  
-
-});
