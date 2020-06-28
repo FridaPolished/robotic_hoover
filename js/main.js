@@ -21,7 +21,7 @@ $(document).ready(function () {
       Data.directions,
       Data.grid);
     output.innerHTML = Data.showData({ 'input': false, 'output': true, 'res': res });
-    });  
+    }, "text");  
   });
 
 
