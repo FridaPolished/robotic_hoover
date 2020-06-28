@@ -55,4 +55,29 @@ function adjustPositions(element) {
      return;
    }
  };
-export {setData, placeElements, totalRows, totalCols, hooverPos, dirtPos, directions, grid};
+
+function showData(flag) {
+  if(flag['input']){
+  let dirtEle = ""
+  dirtPos.forEach(dirt => {
+    dirtEle += `<p> ${dirt[0]}, ${dirt[1]}</p>`
+  })
+
+  return `<h5>Input values</h5>
+    <p>Dimension: ${totalRows}, ${totalCols}</p>
+    <p>Robot start position: ${hooverPos}</p>
+    <p>Dirt position: ${dirtEle}<p>
+    <p>Directions: ${directions}</p>
+    `}
+  if(flag['output']){
+    let res = flag['res'];
+   return `
+      <h5>Output</h5>
+      <p id='robot-pos'>Final position of the Robot:  ${res["hoover"]}</p>
+      <p id="counter">Dirt collected:${res["count"]}</p>`
+  }
+}
+
+
+
+export { showData, setData, placeElements, totalRows, totalCols, hooverPos, dirtPos, directions, grid};

@@ -1,19 +1,17 @@
 import * as Data from './data.js';
 import * as Robot from './robot.js';
 
-var counter = document.getElementById('counter');
-var robot = document.getElementById('robot-pos');
-// var originalInput = document.getElementById('original-input');
+var output = document.getElementById('output');
+var input = document.getElementById('original-input');
 
 $(document).ready(function () {
   
   //reading data from txt
-  $.get("../input.txt", function (d) {
-    var data = d;
-    // originalInput.innerHTML = `${d}`
+  $.get("../input.txt", function (data) {
     data = data.split("\n");
     Data.setData(data);
     Data.placeElements();
+    input.innerHTML = Data.showData({'input': true, 'output': false, 'res': null});
     let res = Robot.run(
       Data.totalRows, 
       Data.totalCols, 
@@ -21,9 +19,8 @@ $(document).ready(function () {
       Data.dirtPos, 
       Data.directions,
       Data.grid);
-    robot.innerHTML = `Final position of the Robot:  ${res["hoover"]}`;
-    counter.innerHTML = `Dirt collected:${res["count"]}`;
+    output.innerHTML = Data.showData({ 'input': false, 'output': true, 'res': res });
+    });  
   });
-  
 
-});
+
