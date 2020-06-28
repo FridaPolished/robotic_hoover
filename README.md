@@ -2,7 +2,7 @@
 Created by Frida Pulido.
 
 ### Live demo
-Click here to see the robot in action!
+[Click here](Futurelinkhere) to see the robot in action!
 
 ### Technologies
 
@@ -28,7 +28,52 @@ The robot does not encounter any obstacles on the area that is cleaning and stay
 
 The program extracts the information from the .txt file by using JQuery the data is used in later functions to parse it and run the hooover.
 
-
 It displays the final position of the robot and the dirt collected after running in all the directions provided in the input. This information is visible on a DOM element and on the browser terminal.
 
 ### Code sample
+
+Formatting the retrieved the data from the .txt to create cardinal positions.
+
+```js
+function setData(data) {
+  for (let i = 0; i < data.length; i++) {
+    let cur = data[i];
+    if (i === 0) {
+      totalRows = +cur[2];
+      totalCols = +cur[0];
+    } else if (i === 1) {
+      hooverPos = [+cur[2], +cur[0]];
+    } else if (i === data.length - 1) {
+      directions = cur.split("");
+    } else {
+      dirtPos.push([+cur[2], +cur[0]]);
+    }
+  }
+}
+```
+
+Using a switch case to check for direction of the new position for the robot to explore.
+```js
+  while (directions.length) {
+    let dir = directions.shift();
+
+    switch (dir) {
+      case "N":
+        if (withinBounds(hooverPos[0] - 1, hooverPos[1])) {
+            updateRobotPos(
+            hooverPos[0],
+            hooverPos[1],
+            hooverPos[0] - 1,
+            hooverPos[1],
+          );
+
+          let curPos = +hooverPos[0] + "," + hooverPos[1];
+          if (dirt.has(curPos)) {
+            dirt.delete(curPos);
+            counter++;
+          }
+        }
+        break;
+    }
+  }
+```
