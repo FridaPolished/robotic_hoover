@@ -2,7 +2,7 @@
 Created by Frida Pulido.
 
 ### Live demo
-[Click here](Futurelinkhere) to see the robot in action!
+[Click here](https://fridapolished.github.io/robotic_hoover/) to see the robot in action!
 
 ### Technologies
 
