@@ -10,7 +10,6 @@ Created by Frida Pulido.
   - CSS
   - NodeJS
   - JavaScript
-  - JQuery
   - Materialize
 
 
