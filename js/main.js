@@ -4,11 +4,7 @@ import * as Robot from './robot.js';
 var output = document.getElementById('output');
 var input = document.getElementById('original-input');
 
-var oReq = new XMLHttpRequest();
-oReq.addEventListener("load", reqListener);
-// oReq.open("GET", "../input.txt");
-oReq.open("GET", "https://github.com/FridaPolished/robotic_hoover/blob/d372ec7e600e9d4b4532e7c8b09d745d0fdb6388/input.txt");
-oReq.send();
+
 
 var data;
 function reqListener() {
@@ -27,3 +23,8 @@ function reqListener() {
   //       Data.grid);
   //     output.innerHTML = Data.showData({ 'input': false, 'output': true, 'res': res });
 }
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", reqListener);
+oReq.open("GET", "../input.txt");
+// oReq.open("GET", "https://github.com/FridaPolished/robotic_hoover/blob/d372ec7e600e9d4b4532e7c8b09d745d0fdb6388/input.txt");
+oReq.send();
