@@ -27,7 +27,7 @@ The robot does not encounter any obstacles on the area that is cleaning and stay
 
 The program extracts the information from the .txt file by opening the file using a XMLHttpRequest request, the response is then used on a callback function that parses the data and runs the robot.
 
-It displays the final position of the robot and the dirt collected after running in all the directions provided in the input. This information is visible on a DOM element and on the browser terminal.
+The program displays the final position of the robot and the dirt collected after running in all the directions provided from input. This information is visible on a DOM element and on the browser terminal.
 
 ### Code sample
 
@@ -76,3 +76,4 @@ Using a switch case to check for direction of the new position for the robot to 
     }
   }
 ```
+

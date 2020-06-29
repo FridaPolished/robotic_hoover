@@ -4,20 +4,15 @@ import * as Robot from './robot.js';
 var output = document.getElementById('output');
 var input = document.getElementById('original-input');
 
-
-// function reqListener() {
-//   console.log(this.responseText);
-// }
-
 var oReq = new XMLHttpRequest();
 oReq.addEventListener("load", reqListener);
+// oReq.open("GET", "../input.txt"); //use this request to run it on local server
 oReq.open("GET", "input.txt");
 oReq.send();
 
 var data;
 function reqListener() {
   data = this.responseText;
-  console.log(data)
   data = data.split("\n");
       Data.setData(data);
       Data.placeElements();
