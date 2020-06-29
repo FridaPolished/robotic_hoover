@@ -5,7 +5,7 @@ var output = document.getElementById('output');
 var input = document.getElementById('original-input');
 
 $(document).ready(function () {
-  let url = 'https://rawgithubusercontent.com/FridaPolished/robotic_hoover/master/input.txt'
+  let url = 'https://raw.githubusercontent.com/FridaPolished/robotic_hoover/master/input.txt'
   //reading data from txt
   $.get(url, function (data) {
     data = data.split("\n");
