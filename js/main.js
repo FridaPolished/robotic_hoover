@@ -4,11 +4,14 @@ import * as Robot from './robot.js';
 var output = document.getElementById('output');
 var input = document.getElementById('original-input');
 
-var opReq = new XMLHttpRequest();
-opReq.addEventListener("load", reqListener);
-opReq.open("GET", "../input.txt");
-opReq.send();
-
+// var opReq = new XMLHttpRequest();
+// opReq.addEventListener("load", reqListener);
+// opReq.open("GET", "../input.txt");
+// opReq.send();
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", reqListener);
+oReq.open("GET", "../input.txt");
+oReq.send();
 
 function reqListener() {
   var data = this.responseText;
