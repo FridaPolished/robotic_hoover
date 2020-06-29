@@ -25,7 +25,7 @@ The robot does not encounter any obstacles on the area that is cleaning and stay
 
 ### Features
 
-The program extracts the information from the .txt file by using JQuery the data is used in later functions to parse it and run the hooover.
+The program extracts the information from the .txt file by opening the file using a XMLHttpRequest request, the response is then used on a callback function that parses the data and runs the robot.
 
 It displays the final position of the robot and the dirt collected after running in all the directions provided in the input. This information is visible on a DOM element and on the browser terminal.
 
