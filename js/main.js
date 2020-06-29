@@ -10,7 +10,7 @@ var input = document.getElementById('original-input');
 // opReq.send();
 var oReq = new XMLHttpRequest();
 oReq.addEventListener("load", reqListener);
-oReq.open("GET", "../input.txt");
+oReq.open("GET", "input.txt");
 oReq.send();
 
 function reqListener() {
