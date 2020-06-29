@@ -5,9 +5,9 @@ var output = document.getElementById('output');
 var input = document.getElementById('original-input');
 
 $(document).ready(function () {
-  
+  let url = 'https://rawgithubusercontent.com/FridaPolished/robotic_hoover/master/input.txt'
   //reading data from txt
-  $.get("../input.txt", function (data) {
+  $.get(url, function (data) {
     data = data.split("\n");
     Data.setData(data);
     Data.placeElements();
