@@ -15,12 +15,6 @@ body {
   font-size: 1.6em;
 }
 
-#canvas{
-  height: 450;
-  width: 560;
-  background-color: lightgray;
-  border:#01423a solid 2px;  
-}
 
 form span{
   color: #00bfa5;
@@ -35,15 +29,6 @@ form span{
   font-size: 1.6em;  
 }
 
-.x-axis path, .y-axis path,
-.x-axis line, .y-axis line {
-  stroke: white;
-}
-
-.x-axis text, .y-axis text{
-  fill: white;
-  font-size: 14px;
-}
 
 button{
   font-family: 'Roboto Mono', monospace;
