@@ -17,7 +17,7 @@ Created by Frida Pulido.
 This is an implementation of a virtual robotic hoover (Roomba-like).
 
 
-The robotic hoover gets the data to start running from a .txt file that lives in the same directory.
+The robotic hoover gets the data to start running from a .txt file that lives in the same directory as the program.
 
 ##### Constraints
 
