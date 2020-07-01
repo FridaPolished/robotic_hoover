@@ -30,9 +30,20 @@ The robot does not encounter any obstacles on the area that is cleaning and stay
 
 ### Features
 
-The program extracts the information from the .txt file by opening the file using a XMLHttpRequest request, the response is then used on a callback function that parses the data and runs the robot.
+The program extracts the information from the .txt file by opening the file using a XMLHttpRequest request, the response is then used on a callback function that parses the data and runs the robot. The user can also choose a file of their preference using the "Choose File" button present in the page.
+
+![main feature of robotic hoover showing results and input](https://i.imgur.com/1RQKnN5.png)
 
 The program displays the final position of the robot and the dirt collected after running in all the directions provided from input. This information is visible on a DOM element and on the browser terminal.
+(Below view on a responsive browser)
+
+![main feature plus console logs in browser](https://i.imgur.com/v5A0AtW.png)
+
+There is also a terminal version that can be run too.
+
+![terminal version showing the hoover trajectory](https://i.imgur.com/DWfsvjZ.png)
+
+![terminal version showing the hoover trajectory and results](https://i.imgur.com/7VBvX15.png)
 
 ### Code sample
 
