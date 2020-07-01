@@ -4,6 +4,11 @@ Created by Frida Pulido.
 ### Live demo
 [Click here](https://fridapolished.github.io/robotic_hoover/) to see the robot in action!
 
+### Terminal version
+Clone this repository, navigate to the robotic_hoover directory  and run 
+
+**node hoover.js**
+
 ### Technologies
 
   - HTML

@@ -15,10 +15,11 @@ body {
   font-size: 1.6em;
 }
 
-.canvas{
+#canvas{
   height: 450;
   width: 560;
-  background-color: gray;
+  background-color: lightgray;
+  border:#01423a solid 2px;  
 }
 
 form span{
@@ -42,4 +43,13 @@ form span{
 .x-axis text, .y-axis text{
   fill: white;
   font-size: 14px;
+}
+
+button{
+  font-family: 'Roboto Mono', monospace;
+}
+
+#new-file{
+  font-family: 'Roboto Mono', monospace;
+  cursor: pointer;
 }
